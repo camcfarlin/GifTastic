@@ -1,0 +1,30 @@
+body {
+    background: #e7f4f5;
+}
+
+.logo {
+    font-size: 32px;
+    text-align: center;
+    color:#457b9d;
+}
+
+#search {
+    text-align: center;
+}
+#searchInput {
+    border: black solid;
+    width: 80%;
+}
+
+.btn {
+    background: #63adf2;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.btnSearch {
+    background: #a7cced;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid black;
+}
