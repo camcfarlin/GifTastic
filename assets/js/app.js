@@ -1,5 +1,7 @@
 var search;
 var images = [];
+var tapspeed = 0;
+var state;
 $('#addSearch').on('click', function(e){
     e.preventDefault();   
     search = $('#searchInput').val().trim();
@@ -15,7 +17,7 @@ $('#addSearch').on('click', function(e){
 
 $(document).on("click", "img", function () {
 
-    var state = $(this).attr("data-state");
+    state = $(this).attr("data-state");
     if (state === "still") {
         console.log("the state is still")
       $(this).attr("src", $(this).attr("data-animate"));
@@ -27,7 +29,7 @@ $(document).on("click", "img", function () {
     }
     });
 
-var tapspeed = 0;
+
 //double click function for mobile/ desktop
 $(document).on("click", "img", function() {
     if (tapspeed == 0) {

@@ -33,6 +33,7 @@ body {
 .favBtn{
     text-align: center;
     background:  #63adf2;
+    border-radius: 5px;
 }
 .gify {
     border: #82a0bc solid 1px;
@@ -48,4 +49,16 @@ body {
 
 .mb-0{
     height: 20px;
+}
+
+#accordion{
+    float:right;
+    position: relative;
+}
+
+
+@media only screen and (max-width: 500px) {
+    #gif > img {
+        margin: 0 auto;
+    }
 }
