@@ -20,6 +20,7 @@ body {
     background: #63adf2;
     border-radius: 5px;
     border: 1px solid black;
+    margin-bottom: 10px;
 }
 
 .btnSearch {
@@ -27,4 +28,24 @@ body {
     border-radius: 5px;
     padding-left: 10px;
     border: 1px solid black;
+    margin: 10px 10px 10px 0;
+}
+.favBtn{
+    text-align: center;
+    background:  #63adf2;
+}
+.gify {
+    border: #82a0bc solid 1px;
+    /* margin-right: 10px; */
+    margin: 10px 10px 0 0;
+}
+
+#headingOne {
+    color: white;
+    background: #63adf2;
+    border: black solid 2px;
+}
+
+.mb-0{
+    height: 20px;
 }

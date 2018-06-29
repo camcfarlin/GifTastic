@@ -4,11 +4,58 @@ $('#addSearch').on('click', function(e){
     e.preventDefault();   
     search = $('#searchInput').val().trim();
     console.log("Search = " + search);
-    // write it to dom
     $('#searchResults').prepend(search);
+    // Array of search items
     images.push(search);
+    // run function to add buttons and attributes
     renderButtons();
+    //clear input
+    document.getElementById('searchInput').value='';
 });
+
+$(document).on("click", "img", function () {
+
+    var state = $(this).attr("data-state");
+    if (state === "still") {
+        console.log("the state is still")
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+    });
+
+var tapspeed = 0;
+//double click function for mobile/ desktop
+$(document).on("click", "img", function() {
+    if (tapspeed == 0) {
+        // set first click
+        tapspeed = new Date().getTime();
+    } else {
+        // compare first click to this click and see if they occurred within double click threshold
+        if (((new Date().getTime()) - tapspeed) < 800) {
+            // double click occurred
+            if ($(this).hasClass('fav')) {
+                $(this).remove();
+                $("#gif").prepend($(this));
+                $(this).removeClass("fav");
+            }
+                else{
+                    $("#fav").append($(this));
+                    $(this).addClass("fav");
+                }
+           
+            tapspeed = 0;
+        } else {
+            // not a double click so set as a new first click
+            tapspeed = new Date().getTime();
+           
+        }
+    }
+});
+
 // Function for displaying image data
 function renderButtons() {
 $("#searchResults").empty();
@@ -35,35 +82,29 @@ function renderGif() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        // $('#btnSearch').on('click', function(){
-        //     $("#searchResults").prepend(image);   
-        var imgURL = response.Poster;
-            var image = $("#searchResults").attr("src", imgURL);
+        // fixed_height_small.url;
+        var imgUrl = response.data.fixed_height_small_still_url; 
+        var imgAni = response.data.fixed_height_small_url;
 
-            // Appending the image
-            movieDiv.append(image);
-  
+        console.log (imgUrl)
+        var image = $("<img>")
+        .attr({
+        'src': imgUrl,
+        'data-animate': imgAni,
+        'data-still': imgUrl,
+        'data-state': "still",
+        })
+        .addClass('gify');
+        // Appending the image
+        image.append(images);
+
             // Putting the entire movie above the previous movies
-            $("#movies-view").prepend(movieDiv);
+            $("#gif").prepend(image);
+            console.log (this);
           });
-    });
+    };
+
     
-}
-   
-//     // After the data from the AJAX request comes back
-//     .then(function(response) {
 
-//         // Saving the image_original_url property
-//             var imageUrl = response.data.image_original_url;
-
-//             // Creating and storing an image tag
-//             var giphy = $("#searchResults");
-
-//             // Setting the catImage src attribute to imageUrl
-//             catImage.attr("src", imageUrl);
-//             catImage.attr("alt", search + "image");
-
-//             // Prepending the catImage to the images div
-//             $("#images").prepend(catImage);
-//         });
-
+  
+    $(document).on("click", ".btnSearch", renderGif);
