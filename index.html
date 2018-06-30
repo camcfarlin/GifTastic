@@ -27,7 +27,6 @@
                     </form>		
                 </div>
             </div>
-            <!-- <div class = 'container'> -->
             <div class="container">
                 <div class="row">
                     <div id = 'searchResults'> </div>
@@ -37,28 +36,47 @@
                     <button class="btnSearch" data-name="tech">tech</button>
                 </div>
             </div>
+
             <div class="container">
-            <div class="col-sm-4" id="accordion">
+            <div class="row col-sm-5" id = 'gif'> </div>
+                <div class="col-sm-3" id="accordion">
                     <div class="card">
-                      <div class="card-header" id="headingOne">
-                        <h5 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <p class="favBtn">
-                            Favorites
-                          </p>
-                        </h5>
-                      </div>
-                  
-                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body" id="fav">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <p class="srcOpt"> Search Options</p>
+                            </h5>
                         </div>
-                      </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="form-check form-row" id= "standard">
+
+                                    <label class="radio-inline"><input type="radio" name="optradio" class="radio">Small</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio" class="radio">Large</label> 
+                                    <label for="sel1">Load: </label>
+                                        <select class="form-control" id="sel1"> <p>load</p>
+                                            <option>1</option>
+                                            <option>5</option>
+                                            <option>10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <p class="favBtn">
+                                        Favorites
+                                        </p>
+                                    </h5>
+                                </div>
+                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body" id="fav"> </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div class="container">
-                    <div class="row col-sm-8" id = 'gif'>
-                    </div>
-                </div>
-     </div>
+            </div>
     <body>
    
         <!-- Optional JavaScript -->
