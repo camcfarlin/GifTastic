@@ -78,6 +78,7 @@ for (var i = 0; i < images.length; i++) {
 }
 }
 function renderGif() {
+    for (let pull = 0; pull < 10; pull++) {
     search = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=NNm6OtMHIWdnjhvwLvUdSRxBAB4Ph95M&tag=" + search;
     $.ajax({
@@ -85,10 +86,13 @@ function renderGif() {
         method: "GET"
     }).then(function(response) {
         // fixed_height_small.url;
-        var imgUrl = response.data.fixed_height_small_still_url; 
-        var imgAni = response.data.fixed_height_small_url;
-
+     
+        
         console.log (imgUrl)
+           
+        var imgUrl = response.data.fixed_height_small_still_url; 
+        var imgAni = response.data.fixed_height_small_url;    
+       
         var image = $("<img>")
         .attr({
         'src': imgUrl,
@@ -103,7 +107,9 @@ function renderGif() {
             // Putting the entire movie above the previous movies
             $("#gif").prepend(image);
             console.log (this);
+        
           });
+        }
     };
 
     
