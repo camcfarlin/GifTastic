@@ -13,78 +13,71 @@
         <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Righteous" rel="stylesheet">  
     
     </head>
-    <div class="container">
-            <div class="row">
-                <div class="col-sm-12 logo">GifTastic</div>
-            </div>
-     </div>
-    <div class="container">
-            <div class="row">
-                <div class="col-sm-12">	
-                    <form id="search">
-                        <input type= 'text' id= 'searchInput'><br> <br>
-                        <input type= 'submit' id ='addSearch' class = 'btn' value="Search">
-                    </form>		
-                </div>
-            </div>
+   
+    <body>
             <div class="container">
-                <div class="row">
-                    <div id = 'searchResults'> </div>
-                    <button class="btnSearch" data-name="Puppies">Puppies</button>
-                    <button class="btnSearch" data-name="Kittens">Kittens</button>
-                    <button class="btnSearch" data-name="casino">casino</button>
-                    <button class="btnSearch" data-name="tech">tech</button>
-                </div>
-            </div>
-
+                    <div class="row">
+                        <div class="col-sm-12 logo">GifTastic</div>
+                    </div>
+             </div>
             <div class="container">
-            <div class="row col-sm-5" id = 'gif'> </div>
-                <div class="col-sm-3" id="accordion">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <p class="srcOpt"> Search Options</p>
-                            </h5>
-                        </div>
-
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="form-check form-row" id= "standard">
-
-                                    <label class="radio-inline"><input type="radio" name="optradio" class="radio">Small</label>
-                                    <label class="radio-inline"><input type="radio" name="optradio" class="radio">Large</label> 
-                                    <label for="sel1">Load: </label>
-                                        <select class="form-control" id="sel1"> <p>load</p>
-                                            <option>1</option>
-                                            <option>5</option>
-                                            <option>10</option>
-                                        </select>
-                                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">	
+                            <form id="search">
+                                <input type= 'text' id= 'searchInput'>
+                                <div class='row col-md-4' id='searchOpts'>
+                                <label class="radio-inline"><input type="radio" name="optradio" class="radio" checked="checked" value='sm'>Small</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" class="radio" value='lg'>Large</label> 
+                                    <label>Pull:</label>
+                                    <select class="form-control" id="pull"> <p>load</p>
+                                        <option>1</option>
+                                        <option>5</option>
+                                        <option>10</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        <p class="favBtn">
-                                        Favorites
-                                        </p>
-                                    </h5>
-                                </div>
-                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body" id="fav"> </div>
-                            </div>
+                                <input type= 'submit' id ='addSearch' class = 'btn' value="Search">
+                            </form>		
                         </div>
                     </div>
-                </div>
-            </div>
-    <body>
-   
+                    <div class="container">
+                        <div class="row">
+                            <div id = 'searchResults'> </div>
+                            <button class="btnSearch" data-name="Puppies">Puppies</button>
+                            <button class="btnSearch" data-name="Kittens">Kittens</button>
+                            <button class="btnSearch" data-name="casino">casino</button>
+                            <button class="btnSearch" data-name="tech">tech</button>
+                        </div>
+                    </div>
+        
+                    <div class="container">
+                            <div class="container">
+                                    <div class="col-sm-4" id="accordion">
+                                            <div class="card">
+                                              <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                  <p class="favBtn">
+                                                    Favorites
+                                                  </p>
+                                                </h5>
+                                              </div>
+                                          
+                                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                <div class="card-body" id="fav">
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    <div class="container">
+                                            <div class="row col-sm-8" id = 'gif'>
+                                            </div>
+                                        </div>
+                             </div>
         <!-- Optional JavaScript -->
 	
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="assets/js/app.js"></script>
+            <script type="text/javascript" src="assets/js/app.js"></script>
     </body>
 </html>

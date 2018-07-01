@@ -13,7 +13,11 @@ body {
 }
 #searchInput {
     border: black solid;
-    width: 80%;
+    width: 50%;
+}
+
+#searchOpts {
+    margin: 0 auto;
 }
 
 .btn {
@@ -57,12 +61,23 @@ body {
 .mb-0{
     height: 20px;
 }
-
+#pull{
+    float: left;
+    width: 50px;
+    height: 25px;
+}
 #accordion{
     float:right;
     position: relative;
 }
 
+label {
+    margin-left: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 3px;
+  }
 
 @media only screen and (max-width: 500px) {
     #gif > img {

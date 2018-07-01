@@ -2,6 +2,16 @@ var search;
 var images = [];
 var tapspeed = 0;
 var state;
+var pullN = 10;
+
+$(document).ready(function(){
+    $('.radio').click(function() {
+        var srcOpt = $('input[name=optradio]:checked').val(); 
+        console.log(srcOpt)
+    });
+});
+
+
 $('#addSearch').on('click', function(e){
     e.preventDefault();   
     search = $('#searchInput').val().trim();
@@ -12,6 +22,7 @@ $('#addSearch').on('click', function(e){
     // run function to add buttons and attributes
     renderButtons();
     //clear input
+    console.log(srcOpt());
     document.getElementById('searchInput').value='';
 });
 
@@ -27,11 +38,7 @@ $(document).on("click", "img", function () {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
     }
-    });
 
-
-//double click function for mobile/ desktop
-$(document).on("click", "img", function() {
     if (tapspeed == 0) {
         // set first click
         tapspeed = new Date().getTime();
@@ -58,6 +65,7 @@ $(document).on("click", "img", function() {
     }
 });
 
+
 // Function for displaying image data
 function renderButtons() {
 $("#searchResults").empty();
@@ -78,6 +86,9 @@ for (var i = 0; i < images.length; i++) {
 }
 }
 function renderGif() {
+    pullN = $('#pull').val();
+    // console.log (pullN);
+    for (let pull = 0; pull < pullN; pull++) {
     search = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=NNm6OtMHIWdnjhvwLvUdSRxBAB4Ph95M&tag=" + search;
     $.ajax({
@@ -85,10 +96,13 @@ function renderGif() {
         method: "GET"
     }).then(function(response) {
         // fixed_height_small.url;
+       
+      
+        // original_still
+        // original
         var imgUrl = response.data.fixed_height_small_still_url; 
-        var imgAni = response.data.fixed_height_small_url;
-
-        console.log (imgUrl)
+        var imgAni = response.data.fixed_height_small_url;    
+       
         var image = $("<img>")
         .attr({
         'src': imgUrl,
@@ -102,8 +116,10 @@ function renderGif() {
 
             // Putting the entire movie above the previous movies
             $("#gif").prepend(image);
-            console.log (this);
+            // console.log (this);
+        
           });
+        }
     };
 
     
