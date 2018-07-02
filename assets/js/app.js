@@ -115,14 +115,14 @@ function renderGif() {
         // original_still
         // original
         if (srcOpt === "lg") {
-            var imgUrl = response.data.images.downsized.url;
-            var imgAni = response.data.images.downsized_still.url; 
+            var imgUrl = response.data.images.downsized_still.url;
+            var imgAni = response.data.images.downsized.url; 
         } else {
             var imgUrl = response.data.images.fixed_height_small_still.url; 
             var imgAni = response.data.images.fixed_height_small.url;  
         }
           
-        console.log (response.data.images);
+        // console.log (response.data.images);
         var image = $("<img>")
         .attr({
         'src': imgUrl,
