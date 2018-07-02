@@ -15,63 +15,63 @@
     </head>
    
     <body>
-            <div class="container">
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 logo">GifTastic</div>
+                </div>
+            </div>
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">	
+                        <form id="search">
+                            <input type= 'text' id= 'searchInput' placeholder="Spirit Animal">
+                            <div class='row col-md-4' id='searchOpts'>
+                            <label class="radio-inline"><input type="radio" name="optradio" class="radio" checked="checked" value='sm'>Small</label>
+                            <label class="radio-inline"><input type="radio" name="optradio" class="radio" value='lg'>Large</label> 
+                                <label>Pull:</label>
+                                <select class="form-control" id="pull"> <p>load</p>
+                                    <option>1</option>
+                                    <option>5</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                            <input type= 'submit' id ='addSearch' class = 'btn' value="Search">
+                        </form>		
+                    </div>
+                </div>
+                <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 logo">GifTastic</div>
+                        <div id = 'searchResults'> </div>
+                        <button class="btnSearch" data-name="Puppies">Puppies</button>
+                        <button class="btnSearch" data-name="Kittens">Kittens</button>
+                        <button class="btnSearch" data-name="casino">casino</button>
+                        <button class="btnSearch" data-name="tech">tech</button>
                     </div>
-             </div>
-            <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">	
-                            <form id="search">
-                                <input type= 'text' id= 'searchInput' placeholder="Spirit Animal">
-                                <div class='row col-md-4' id='searchOpts'>
-                                <label class="radio-inline"><input type="radio" name="optradio" class="radio" checked="checked" value='sm'>Small</label>
-                                <label class="radio-inline"><input type="radio" name="optradio" class="radio" value='lg'>Large</label> 
-                                    <label>Pull:</label>
-                                    <select class="form-control" id="pull"> <p>load</p>
-                                        <option>1</option>
-                                        <option>5</option>
-                                        <option>10</option>
-                                    </select>
-                                </div>
-                                <input type= 'submit' id ='addSearch' class = 'btn' value="Search">
-                            </form>		
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div id = 'searchResults'> </div>
-                            <button class="btnSearch" data-name="Puppies">Puppies</button>
-                            <button class="btnSearch" data-name="Kittens">Kittens</button>
-                            <button class="btnSearch" data-name="casino">casino</button>
-                            <button class="btnSearch" data-name="tech">tech</button>
-                        </div>
-                    </div>
+                </div>
+    
         
-                    <div class="container">
-                            <div class="container">
-                                    <div class="col-sm-4" id="accordion">
-                                            <div class="card">
-                                              <div class="card-header" id="headingOne">
-                                                <h5 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                  <p class="favBtn">
-                                                    Favorites
-                                                  </p>
-                                                </h5>
-                                              </div>
-                                          
-                                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                                <div class="card-body" id="fav">
-                                                </div>
-                                              </div>
-                                            </div>
-                                        </div>
-                                    <div class="container">
-                                            <div class="row col-sm-8" id = 'gif'>
-                                            </div>
-                                        </div>
-                             </div>
+
+            <div class="col-sm-5" id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h6 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <p class="favBtn">
+                                Favorites
+                            </p>
+                        </h6>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body" id="fav">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="row col-sm-7">
+                        <h5>Click to play - Double click to move to Favorites</h5>
+                    <div id = 'gif'> </div>
+                </div>
+     
         <!-- Optional JavaScript -->
 	
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

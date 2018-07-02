@@ -17,7 +17,24 @@ img {
     text-align: center;
     color:#457b9d;
 }
+.card-header {
+    background:  #63adf2;
+    width: 100%;
+    border: black solid 2px;
+}
+h5 {
+    background:  #63adf2;
+    width: 100%;
+    border: black solid 2px;
+    padding: 10px;
+}
+h6, h5 {
+    vertical-align: bottom;
+    font-size: 20px;
+    color: white;
+    text-align: center;
 
+}
 #search {
     text-align: center;
 }
@@ -56,11 +73,11 @@ img {
     background: blue
 }
 
-#headingOne, #headingTwo {
+/* #headingOne {
     color: white;
     background: #63adf2;
     border: black solid 2px;
-}
+} */
 .radio {
     margin-right: 10px;
 }
