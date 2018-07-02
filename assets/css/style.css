@@ -40,7 +40,7 @@ h6, h5 {
 }
 #searchInput {
     border: black solid;
-    width: 50%;
+    width: 80%;
 }
 
 #searchOpts {
@@ -110,4 +110,12 @@ input[type="radio"] {
     #gif > img {
         margin: 0 auto;
     }
+    #holder {
+        margin: 0 auto;
+    }
+    #pull {
+
+        font-size: 10px;
+    }
+
 }
