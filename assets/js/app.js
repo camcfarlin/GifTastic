@@ -4,12 +4,12 @@ var tapspeed = 0;
 var state;
 var pullN = 10;
 
-$(document).ready(function(){
-    $('.radio').click(function() {
-        var srcOpt = $('input[name=optradio]:checked').val(); 
-        console.log(srcOpt)
-    });
-});
+// $(document).ready(function(){
+//     $('.radio').click(function() {
+//         var srcOpt = $('input[name=optradio]:checked').val(); 
+//         console.log(srcOpt)
+//     });
+// });
 
 
 $('#addSearch').on('click', function(e){
@@ -22,7 +22,7 @@ $('#addSearch').on('click', function(e){
     // run function to add buttons and attributes
     renderButtons();
     //clear input
-    console.log(srcOpt());
+    // console.log(srcOpt());
     document.getElementById('searchInput').value='';
 });
 
@@ -65,6 +65,10 @@ $(document).on("click", "img", function () {
     }
 });
 
+$(document).on("click", ".btnSearch", function () {
+
+    
+});
 
 // Function for displaying image data
 function renderButtons() {
@@ -82,33 +86,43 @@ for (var i = 0; i < images.length; i++) {
     // Providing the initial button text
     a.text(images[i]);
     // Adding the button to the buttons-view div
-    $("#searchResults").append(a);
+    $("#searchResults").prepend(a);
 }
 }
 function renderGif() {
     pullN = $('#pull').val();
     // console.log (pullN);
-    setTimeout(function(){
-    for (let pull = 0; pull < pullN; pull++) {
-       
+    //size selection
+    var srcOpt = $('input[name=optradio]:checked').val(); 
+        // console.log("The Current size is  " + srcOpt);
+   
+    // for (let pull = 0; pull < pullN; pull++) {
+
     search = $(this).attr("data-name");
+    // "http://api.giphy.com/v1/gifs/search?q="+ search +"&api_key=NNm6OtMHIWdnjhvwLvUdSRxBAB4Ph95M&limit=10"
+    
     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=NNm6OtMHIWdnjhvwLvUdSRxBAB4Ph95M&tag=" + search;
+  
+ for (let p = 0; p < pullN; p++) {
+   
+ 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
         // fixed_height_small.url;
-     
         
-        console.log (imgUrl)
-           
-       
-      
         // original_still
         // original
-        var imgUrl = response.data.fixed_height_small_still_url; 
-        var imgAni = response.data.fixed_height_small_url;    
-       
+        if (srcOpt === "lg") {
+            var imgUrl = response.data.images.downsized.url;
+            var imgAni = response.data.images.downsized_still.url; 
+        } else {
+            var imgUrl = response.data.images.fixed_height_small_still.url; 
+            var imgAni = response.data.images.fixed_height_small.url;  
+        }
+          
+        console.log (response.data.images);
         var image = $("<img>")
         .attr({
         'src': imgUrl,
@@ -119,15 +133,11 @@ function renderGif() {
         .addClass('gify');
         // Appending the image
         image.append(images);
-
             // Putting the entire movie above the previous movies
             $("#gif").prepend(image);
-            console.log (this);
             // console.log (this);
-        
           });
         }
-    }, 500);
     };
 
     

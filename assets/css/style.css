@@ -2,6 +2,16 @@ body {
     background: #e7f4f5;
 }
 
+img {
+    max-height: 200px;
+    margin-right: 5px;
+}
+.fav {
+    height: 60%;
+    width: 40%;
+    border: black 1px solid;
+    margin: 2px 2px 0;
+}
 .logo {
     font-size: 32px;
     text-align: center;
