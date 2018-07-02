@@ -88,7 +88,9 @@ for (var i = 0; i < images.length; i++) {
 function renderGif() {
     pullN = $('#pull').val();
     // console.log (pullN);
+    setTimeout(function(){
     for (let pull = 0; pull < pullN; pull++) {
+       
     search = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=NNm6OtMHIWdnjhvwLvUdSRxBAB4Ph95M&tag=" + search;
     $.ajax({
@@ -125,6 +127,7 @@ function renderGif() {
         
           });
         }
+    }, 500);
     };
 
     
