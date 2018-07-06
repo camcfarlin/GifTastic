@@ -89,6 +89,13 @@ for (var i = 0; i < images.length; i++) {
     $("#searchResults").prepend(a);
 }
 }
+function collapse () {
+    if ($("#collapseOne".hasClass(show))) {
+        $('#favBtn').html(Favorites )
+    }
+    
+}
+
 function renderGif() {
     pullN = $('#pull').val();
     // console.log (pullN);

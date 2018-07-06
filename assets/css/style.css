@@ -7,8 +7,9 @@ img {
     margin-right: 5px;
 }
 .fav {
-    height: 60%;
-    width: 40%;
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
     border: black 1px solid;
     margin: 2px 2px 0;
 }
@@ -66,11 +67,9 @@ h6, h5 {
     background:  #63adf2;
     border-radius: 5px;
 }
-.gify > img{
+#gif > img{
     border: black solid 3px;
     margin: 10px 10px 0 0;
-    float: left;
-    background: blue
 }
 
 /* #headingOne {
